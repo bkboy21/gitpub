@@ -1,11 +1,24 @@
 {
   "name": "gitpub",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
-  "description": ""
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bkboy21/gitpub.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bkboy21/gitpub/issues"
+  },
+  "homepage": "https://github.com/bkboy21/gitpub#readme",
+  "description": "",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
+  }
 }
