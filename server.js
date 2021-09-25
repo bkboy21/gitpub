@@ -10,18 +10,34 @@ app.get('//', (req, res) => {
 });
 
 
-app.get('/drinks/', (req, res)=>{
+app.get('/drinks/', (req, res) => {
     res.render("drinks_index.ejs", { allDrinks: drinks });
 });
 
 
 
-app.get('/drinks/:id/', (req, res)=>{
-    res.send(req.params.id);
-});
+
+app.get('/drinks/:id', (req, res) => {
+	res.render('drinks_show.ejs', {
+		drink: drinks[req.params.id],
+	})
+})
 
 
 
+
+
+
+
+
+// app.get('/drinks/:id/', (req, res) => {
+
+
+//     res.render("drinks_show.ejs", {showDrink: drinks[req.params.id]});
+// });
+
+
+// , { allDrinks: drinks }
 
 // app.get('/drinks/:index/', (req, res) => {
 //     let response = drinks[req.params.index];
@@ -32,5 +48,5 @@ app.get('/drinks/:id/', (req, res)=>{
 
 
 app.listen(port, () => {
-	console.log('Express is listening on port: ', port);
+    console.log('Express is listening on port: ', port);
 });
