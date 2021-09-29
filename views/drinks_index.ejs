@@ -35,7 +35,27 @@
                 </a>
             </li>
             <% } %>
+
     </ul>
+
+        
+
+
+        <ul>
+            <% for(let i=0; i < foods.length; i++) { %>
+                <li>
+                    <a href="/foods/<%= i %>">
+                        <%= foods[i].name%>
+                    </a>
+                </li>
+                <% } %>
+                
+        </ul>
+
+
+    <br>
+
+
 
 
 

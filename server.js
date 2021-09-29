@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const drinks = require('./models/drinks.js')
+const foods = require('./models/food.js')
 const port = 3000;
 app.set('views', './views');
 app.set('view engine', 'ejs');
@@ -11,7 +12,7 @@ app.get('//', (req, res) => {
 
 
 app.get('/drinks/', (req, res) => {
-    res.render("drinks_index.ejs", { allDrinks: drinks });
+    res.render("drinks_index.ejs", { allDrinks: drinks, foods: foods });
 });
 
 
@@ -20,6 +21,18 @@ app.get('/drinks/', (req, res) => {
 app.get('/drinks/:id', (req, res) => {
 	res.render('drinks_show.ejs', {
 		drink: drinks[req.params.id],
+	})
+})
+
+
+app.get('/food/', (req, res) => {
+    res.redirect("drinks_index.ejs", { food: foods });
+});
+
+
+app.get('/foods/:id', (req, res) => {
+	res.render('show_food.ejs', {
+		food: foods[req.params.id]
 	})
 })
 
